@@ -12,9 +12,11 @@ else:
     exit()
 
 random_number = random.randint(0, top_of_range)
+guesses = 0
 
 while True:
-    user_guess = input("Guess a number between 0 and " + str(top_of_range))
+    guesses += 1
+    user_guess = input("Guess a number: ")
     if user_guess.isdigit():
         user_guess = int(user_guess)
     else:
@@ -28,3 +30,5 @@ while True:
         print("Too low. Try again.")
     else:
         print("Too high. Try again.")
+
+print(f"You got it in {guesses} guesses.")
